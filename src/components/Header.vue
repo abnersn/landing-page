@@ -39,58 +39,69 @@
       <a href="#blog">Blog</a>
       <a href="#use_gratis">Use Grátis</a>
     </nav>
-    <button type="button" class="Header-login">
-      <img class="glyph" src="../assets/glyphs/login.svg" alt="Entre agora" />
-    </button>
   </header>
 </template>
 
 <style scoped lang="scss">
+$gutter: 0.5em;
 .Header {
-  display: grid;
-  grid-template-columns: 14rem auto 1fr 2rem;
-  grid-template-areas: "logo social nav login";
-  grid-gap: 1rem;
+  background: white;
+  display: flex;
   width: 100%;
-  height: 4rem;
   align-items: center;
+  justify-content: center;
+  & > * {
+    margin: $gutter;
+  }
 }
 .Header-logo {
-  grid-area: logo;
   img {
-    width: 14rem;
+    width: 14em;
   }
 }
 .Header-social {
-  grid-area: social;
-  flex: calc(4 * 2rem);
   list-style-type: none;
+  flex: 0 0 calc(4 * 2em);
   li {
     display: inline-block;
   }
   a {
-    padding: 0.5rem;
+    padding: $gutter;
   }
 }
 .Header-nav {
-  grid-area: nav;
-  justify-self: right;
   text-transform: uppercase;
+  margin-left: auto;
   a {
+    display: inline-block;
+    white-space: nowrap;
     text-decoration: none;
-    padding: 0.5rem;
+    padding: $gutter;
   }
 }
-.Header-login {
-  grid-area: login;
-  padding: 0.5rem;
-}
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 920px) {
   .Header {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "logo social"
-      "nav login";
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .Header-social {
+    margin-left: auto;
+  }
+  .Header-nav {
+    white-space: nowrap;
+    overflow-x: auto;
+    text-align: center;
+    margin: auto;
+    scrollbar-width: none;
+  }
+}
+@media screen and (max-width: 380px) {
+  .Header {
+    justify-content: center;
+    font-size: 0.8rem;
+  }
+  .Header-social {
+    display: none;
   }
 }
 </style>

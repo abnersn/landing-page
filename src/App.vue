@@ -4,7 +4,7 @@
 
 <script>
 import Header from "./components/Header";
-import 'reset-css';
+import "reset-css";
 
 export default {
   name: "app",
@@ -14,6 +14,7 @@ export default {
 <style>
 body {
   font-size: 16px;
+  background: palegoldenrod;
   font-family: Arial, Helvetica, sans-serif;
 }
 button {
