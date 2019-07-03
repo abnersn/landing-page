@@ -1,5 +1,15 @@
 <template>
-  <Header />
+  <div>
+    <Header />
+    <main>
+      <section id="conheca" class="test-section" />
+      <section id="e-books" class="test-section" />
+      <section id="planos" class="test-section" />
+      <section id="clientes" class="test-section" />
+      <section id="blog" class="test-section" />
+      <section id="use-gratis" class="test-section" />
+    </main>
+  </div>
 </template>
 
 <script>
@@ -11,12 +21,16 @@ export default {
   components: { Header }
 };
 </script>
-<style>
+<style lang="scss">
+@import "theme";
+
 body {
   font-size: 16px;
   background: palegoldenrod;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: $font-family;
+  color: $text-color;
 }
+
 button {
   padding: 0;
   border: none;
@@ -31,5 +45,8 @@ button {
 }
 * {
   box-sizing: border-box;
+}
+.test-section {
+  height: 110vh;
 }
 </style>

@@ -43,9 +43,11 @@
 </template>
 
 <style scoped lang="scss">
+@import "../theme.scss";
 $gutter: 0.5em;
 .Header {
-  background: white;
+  background: $background-color;
+  position: relative;
   display: flex;
   width: 100%;
   align-items: center;
@@ -53,6 +55,32 @@ $gutter: 0.5em;
   & > * {
     margin: $gutter;
   }
+}
+.Header::after,
+.Header::before {
+  content: "";
+  width: 1rem;
+  height: 2rem;
+  position: absolute;
+  bottom: 0;
+}
+.Header::after {
+  right: 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    $background-color,
+    $background-color
+  );
+}
+.Header::before {
+  left: 0;
+  background: linear-gradient(
+    to left,
+    transparent,
+    $background-color,
+    $background-color
+  );
 }
 .Header-logo {
   img {
@@ -73,6 +101,7 @@ $gutter: 0.5em;
   text-transform: uppercase;
   margin-left: auto;
   a {
+    color: inherit;
     display: inline-block;
     white-space: nowrap;
     text-decoration: none;
@@ -90,9 +119,21 @@ $gutter: 0.5em;
   .Header-nav {
     white-space: nowrap;
     overflow-x: auto;
+    scrollbar-width: none;
     text-align: center;
     margin: auto;
-    scrollbar-width: none;
+  }
+  .Header-nav::after,
+  .Header-nav::before {
+    content: "";
+    display: inline-block;
+    width: 1rem;
+    height: 100%;
+  }
+  .Header-nav::-webkit-scrollbar {
+    background: transparent;
+    width: 0;
+    height: 0;
   }
 }
 @media screen and (max-width: 380px) {
