@@ -2,11 +2,19 @@
   <div>
     <Header />
     <main>
-      <section id="conheca" class="test-section" />
-      <section id="e-books" class="test-section" />
-      <section id="planos" class="test-section" />
-      <section id="clientes" class="test-section" />
-      <section id="blog" class="test-section" />
+      <section id="conheca" class="test-section">
+        <h2>Conheça o Buzzmonitor</h2>
+      </section>
+      <section id="e-books" class="test-section">
+        <h2>E-books</h2>
+      </section>
+      <section id="planos" class="test-section">
+        <h2>Planos</h2>
+      </section>
+      <section id="clientes" class="test-section">
+        <h2>Clientes</h2>
+      </section>
+      <section id="blog" class="test-section"></section>
       <section id="use-gratis" class="test-section" />
     </main>
   </div>
@@ -26,9 +34,10 @@ export default {
 
 body {
   font-size: 16px;
-  background: palegoldenrod;
+  background: linear-gradient(red, orange, yellow, limegreen, blue, purple);
   font-family: $font-family;
   color: $text-color;
+  scroll-behavior: smooth;
 }
 
 button {

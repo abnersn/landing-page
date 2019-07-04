@@ -47,7 +47,8 @@
 $gutter: 0.5em;
 .Header {
   background: $background-color;
-  position: relative;
+  position: sticky;
+  top: 0;
   display: flex;
   width: 100%;
   align-items: center;
@@ -84,7 +85,7 @@ $gutter: 0.5em;
 }
 .Header-logo {
   img {
-    width: 14em;
+    height: 2em;
   }
 }
 .Header-social {
@@ -100,6 +101,7 @@ $gutter: 0.5em;
 .Header-nav {
   text-transform: uppercase;
   margin-left: auto;
+  display: flex;
   a {
     color: inherit;
     display: inline-block;
@@ -125,10 +127,10 @@ $gutter: 0.5em;
   }
   .Header-nav::after,
   .Header-nav::before {
-    content: "";
+    content: "0";
     display: inline-block;
     width: 1rem;
-    height: 100%;
+    height: 1rem;
   }
   .Header-nav::-webkit-scrollbar {
     background: transparent;
@@ -149,7 +151,8 @@ $gutter: 0.5em;
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+  props: ["fixed"]
 };
 </script>
 
