@@ -56,6 +56,14 @@ button {
   box-sizing: border-box;
 }
 .test-section {
+  padding-top: 4rem;
+  margin-top: -4rem;
   height: 110vh;
+}
+@media screen and (max-width: 869px) {
+  .test-section {
+    padding-top: 6rem;
+    margin-top: -6rem;
+  }
 }
 </style>

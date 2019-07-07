@@ -7,7 +7,7 @@
     </figure>
     <ul class="Header-social">
       <li>
-        <a href="https://facebook.com">
+        <a href="https://facebook.com" title="Facebook">
           <img
             class="glyph"
             src="../assets/social-icons/facebook.svg"
@@ -16,17 +16,17 @@
         </a>
       </li>
       <li>
-        <a href="https://instagram.com">
+        <a href="https://instagram.com" title="Instagram">
           <img class="glyph" src="../assets/social-icons/instagram.svg" alt="Nosso instagram" />
         </a>
       </li>
       <li>
-        <a href="https://twitter.com">
+        <a href="https://twitter.com" title="Twitter">
           <img class="glyph" src="../assets/social-icons/twitter.svg" alt="nosso perfil no twitter" />
         </a>
       </li>
       <li>
-        <a href="https://youtube.com">
+        <a href="https://youtube.com" title="Youtube">
           <img class="glyph" src="../assets/social-icons/youtube.svg" alt="Nosso canal no youtube" />
         </a>
       </li>
@@ -125,12 +125,11 @@ $gutter: 0.5em;
     text-align: center;
     margin: auto;
   }
-  .Header-nav::after,
-  .Header-nav::before {
-    content: "0";
-    display: inline-block;
-    width: 1rem;
-    height: 1rem;
+  .Header-nav > *:first-child {
+    padding-left: 1rem;
+  }
+  .Header-nav > *:last-child {
+    padding-right: 1rem;
   }
   .Header-nav::-webkit-scrollbar {
     background: transparent;
