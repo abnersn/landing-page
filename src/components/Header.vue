@@ -45,9 +45,11 @@
 <style scoped lang="scss">
 @import "../theme.scss";
 $gutter: 0.5em;
+$height: 3rem;
 .Header {
   background: $background-color;
   position: sticky;
+  height: $height;
   top: 0;
   display: flex;
   width: 100%;
@@ -57,35 +59,11 @@ $gutter: 0.5em;
     margin: $gutter;
   }
 }
-.Header::after,
-.Header::before {
-  content: "";
-  width: 1rem;
-  height: 2rem;
-  position: absolute;
-  bottom: 0;
-}
-.Header::after {
-  right: 0;
-  background: linear-gradient(
-    to right,
-    transparent,
-    $background-color,
-    $background-color
-  );
-}
-.Header::before {
-  left: 0;
-  background: linear-gradient(
-    to left,
-    transparent,
-    $background-color,
-    $background-color
-  );
-}
 .Header-logo {
+  height: 100%;
+  padding: 0.5rem 0;
   img {
-    height: 2em;
+    height: 100%;
   }
 }
 .Header-social {
@@ -110,40 +88,19 @@ $gutter: 0.5em;
     padding: $gutter;
   }
 }
-@media screen and (max-width: 920px) {
-  .Header {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-  .Header-social {
-    margin-left: auto;
-  }
+@media screen and (max-width: $bp-tablet) {
   .Header-nav {
-    white-space: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none;
-    text-align: center;
-    margin: auto;
-  }
-  .Header-nav > *:first-child {
-    padding-left: 1rem;
-  }
-  .Header-nav > *:last-child {
-    padding-right: 1rem;
-  }
-  .Header-nav::-webkit-scrollbar {
-    background: transparent;
-    width: 0;
-    height: 0;
-  }
-}
-@media screen and (max-width: 380px) {
-  .Header {
+    position: absolute;
+    top: $height;
+    left: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    flex-direction: column;
     justify-content: center;
-    font-size: 0.8rem;
-  }
-  .Header-social {
-    display: none;
+    align-items: center;
+    background: $background-color;
   }
 }
 </style>
